@@ -413,11 +413,13 @@ descriptors and produce the same scripts.
 A first reference implementation and documentation for Miniscript in P2WSH was originally published at
 https://github.com/sipa/miniscript .
 
+[[bip-0381.mediawiki|381]]
+
 The reference implementation for Miniscript in P2WSH was introduced in Bitcoin Core through PRs
-[24147](https://github.com/bitcoin/bitcoin/pull/24147), [24148](https://github.com/bitcoin/bitcoin/pull/24148), and
-[24149](https://github.com/bitcoin/bitcoin/pull/24149). The last one to be merged was released in Bitcoin
+[[24147][https://github.com/bitcoin/bitcoin/pull/24147]], [[24148][https://github.com/bitcoin/bitcoin/pull/24148]], and
+[[24149][https://github.com/bitcoin/bitcoin/pull/24149]]. The last one to be merged was released in Bitcoin
 Core version 25.0.
 
 The reference implementation for Miniscript in Tapscript was introduced in Bitcoin Core in PR
-[27255](https://github.com/bitcoin/bitcoin/pull/27255). This PR was merged and released in Bitcoin Core
+[[27255][https://github.com/bitcoin/bitcoin/pull/27255]]. This PR was merged and released in Bitcoin Core
 version 26.0.
