@@ -148,10 +148,12 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |(X and Y) or Z                                           
 |andor(X,Y,Z)                
 |[X] NOTIF [Z] ELSE [Y] ENDIF
+|X and Y                                                  
+|and_v(X,Y)                  
+|[X] [Y]
 |}
 
 <!--
-| X and Y                                                  | `and_v(X,Y)`                  | `[X] [Y]`
 |                                                          | `and_b(X,Y)`                  | `[X] [Y] BOOLAND`
 |                                                          | `and_n(X,Y)` = `andor(X,Y,0)` | `[X] NOTIF 0 ELSE [Y] ENDIF`
 | X or Z                                                   | `or_b(X,Z)`                   | `[X] [Z] BOOLOR`
