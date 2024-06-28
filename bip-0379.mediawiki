@@ -123,10 +123,10 @@ system for Miniscript.
 
 ====Correctness====
 
-Every miniscript expression has one of four basic types: "**B**" (base), "**V**" (verify),
-"**K**" (key) and "**W**" (wrapped). Then there are 5 type modifiers that guarantee additional
-properties: "**z**" (zero-arg), "**o**" (one-arg), "**n**" (nonzero), "**d**"
-(dissatisfiable), and "**u**" (unit).
+Every miniscript expression has one of four basic types: "''B''" (base), "''V''" (verify),
+"''K''" (key) and "''W''" (wrapped). Then there are 5 type modifiers that guarantee additional
+properties: "''z''" (zero-arg), "''o''" (one-arg), "''n''" (nonzero), "''d''"
+(dissatisfiable), and "''u''" (unit).
 
 The following table lists the correctness requirements for each of the Miniscript expressions, and
 its type properties in function of those of their subexpressions.
