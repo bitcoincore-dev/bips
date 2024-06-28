@@ -89,7 +89,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |}
 
 {| class="wikitable"
-!colspan="6"|MINSCRIPT
+!colspan="6"|MINISCRIPT
 |-
 |Semantics
 |Miniscript Fragment
@@ -109,6 +109,9 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |-
 |pk_k(key)
 |DUP HASH160 &lt;HASH160&lt;(key)&gt; EQUALVERIFY CHECKSIG
+|-
+|pk(key) = c:pk_k(key)
+|&lt;key&gt; CHECKSIG
 |}
 
 
