@@ -46,7 +46,7 @@ it.
 
 ==Specification==
 
-These specifications apply to P2WSH ([BIP 141](bip-0141.mediawiki)) and Tapscript ([BIP 342](bip-0342.mediawiki)) scripts, with only minor
+These specifications apply to P2WSH ([[bip-0141.mediawiki|bip-0141]]) and Tapscript ([[bip-0342.mediawiki|bip-0342]]) scripts, with only minor
 variations between the two. Differences are noted inline. Unless explicitly stated otherwise,
 specifications apply to both. P2SH and bare scripts are excluded from this specification.
 
@@ -65,8 +65,8 @@ The `pk`, `pkh`, and `and_n` fragments and `t:`,
 `l:`, and `u:` wrappers are syntactic sugar for other Miniscripts, as listed
 in the table below. Note that `<20>` are in hex representation in this document.
 
-Miniscript fragments are expected to be used in [BIP 382](bip-0382.mediawiki) `wsh()` descriptors
-and [BIP 386](bip-0386.mediawiki) `tr()` descriptors. Key expressions are specified in
+Miniscript fragments are expected to be used in ([[bip-0382.mediawiki|bip-0382]]) `wsh()` descriptors
+and ([[bip-0386.mediawiki|bip-0386]]) `tr()` descriptors. Key expressions are specified in
 [BIP 380](bip-0380.mediawiki#user-content-Key_Expressions). Additionally, BIPs 382 and 386 specify
 restrictions on key expressions and what they resolve to - these apply to key expressions in
 Miniscript. BIP 382's key expression restrictions apply to Miniscript in P2WSH contexts, and BIP
