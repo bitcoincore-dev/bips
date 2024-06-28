@@ -103,7 +103,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |1
 |1
 |-
-|check(key)
+|rowspan="4"|check(key)
 |pk_k(key)
 |&lt;key&gt;
 |-
