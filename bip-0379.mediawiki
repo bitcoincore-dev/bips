@@ -186,7 +186,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |-
 !colspan="6"|IDENTITIES
 |-
-|rowspan="4"|X (identities)
+|rowspan="10"|X (identities)
 |-
 |a:X
 |TOALTSTACK [X] FROMALTSTACK
