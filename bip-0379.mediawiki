@@ -73,6 +73,8 @@ Miniscript. BIP 382's key expression restrictions apply to Miniscript in P2WSH c
 386's key expression restrictions apply to Miniscript in P2TR contexts. From a user's perspective,
 Miniscript is not a separate language, but rather a significant expansion of the descriptor language.
 
+<!--
+
 | Semantics                                                | Miniscript Fragment           | Bitcoin Script
 |----------------------------------------------------------|-------------------------------|---------------
 | false                                                    | `0`                           | `0`
@@ -109,7 +111,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |                                                          | `l:X` = `or_i(0,X)`           | `IF 0 ELSE [X] ENDIF`
 |                                                          | `u:X` = `or_i(X,0)`           | `IF [X] ELSE 0 ENDIF`
 
-<!-- -->
+-->
 
 ===Type System===
 
@@ -128,6 +130,8 @@ properties: "**z**" (zero-arg), "**o**" (one-arg), "**n**" (nonzero), "**d**"
 
 The following table lists the correctness requirements for each of the Miniscript expressions, and
 its type properties in function of those of their subexpressions.
+
+<!--
 
 | Miniscript                   | Requires                                              | Type        | Properties
 |------------------------------|-------------------------------------------------------|-------------|-----------
@@ -158,6 +162,8 @@ its type properties in function of those of their subexpressions.
 | `j:X`                        | X is Bn                                               | B           | o=o<sub>X</sub>; n; d; u=u<sub>X</sub>
 | `n:X`                        | X is B                                                | B           | z=z<sub>X</sub>; o=o<sub>X</sub>; n=n<sub>X</sub>; d=d<sub>X</sub>; u
 
+-->
+
 ====Timelock Type Mixing====
 
 There is one additional correctness property that Miniscript expressions must satisfy:
@@ -179,6 +185,8 @@ malleability guarantees of a script we define three additional type properties: 
 "**f**" (forced) and "**e**" (expressive).
 
 The following table lists the malleability properties and requirement of each fragment.
+
+<!--
 
 | Miniscript                   | Requires                                                            | Properties
 |------------------------------|---------------------------------------------------------------------|-----------
@@ -210,6 +218,8 @@ The following table lists the malleability properties and requirement of each fr
 | `j:X`                        |                                                                     | s=s<sub>X</sub>; e=f<sub>X
 | `n:X`                        |                                                                     | s=s<sub>X</sub>; f=f<sub>X</sub>; e=e<sub>X</sub>
 
+-->
+
 ====Satisfaction====
 
 The following table shows all valid satisfactions and dissatisfactions for every Miniscript, using
@@ -220,6 +230,8 @@ non-standard actor. These are called *non-canonical* options, and are listed for
 ~~[struckthrough]~~. The fragments where a satisfaction or dissatisfaction does not exist will
 contain *(none)*. The fragments where the satisfaction or dissatisfaction is to provide no data
 will contain *(empty)*.
+
+<!--
 
 | Miniscript                   | Dissatisfactions (dsat)                                 | Satisfactions (sat)
 |------------------------------|---------------------------------------------------------|--------------------
@@ -250,6 +262,8 @@ will contain *(empty)*.
 | `v:X`                        | *(none)*                                                | sat(X)
 | `j:X`                        | 0; ~~[dsat(X) (if nonzero top stack)]~~                 | sat(X)
 | `n:X`                        | dsat(X)                                                 | sat(X)
+
+-->
 
 ====Non-malleable Satisfaction Algorithm====
 
