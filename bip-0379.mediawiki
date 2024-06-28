@@ -124,6 +124,18 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |nLockTime &lt;= n (and compatible)
 |after(n)
 |&lt;n&gt; CHECKSEQUENCEVERIFIY
+|-
+|len(x) = 32 and SHA256(x) = h
+|sha256(h)
+|SIZE &lt;20&gt; EQUALVERIFIY SHA256 &lt;h&gt; EQUAL
+|-
+|len(x) = 32 and SHA256(x) = h
+|sha256(h)
+|SIZE &lt;20&gt; EQUALVERIFIY SHA256 &lt;h&gt; EQUAL
+|-
+|len(x) = 32 and HASH256(x) = h
+|hash256(h)
+|SIZE &lt;20&gt; EQUALVERIFIY HASH256 &lt;h&gt; EQUAL
 |}
 
 
