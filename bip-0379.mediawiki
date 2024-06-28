@@ -172,8 +172,6 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |or_i(X,Z) = or_i(X,Z)
 |IF [X] ELSE [Z] ENDIF
 |-
-|
-|-
 |X <sub>1</sub> + ... + X <sub>n</sub> = k
 |thresh(k,X<sub>1</sub>, ... , X<sub>n</sub>)
 |[X<sub>1</sub>] [X<sub>2</sub>] ADD ... [X<sub>n</sub>] ADD ... &lt;k&gt; EQUAL
