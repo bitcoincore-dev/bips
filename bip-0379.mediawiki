@@ -107,9 +107,8 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |pk_k(key)
 |&lt;key&gt;
 |-
-|COLSPAN=1
-|COLSPAN=1
-|COLSPAN=1
+|pk_k(key)
+|DUP HASH160 &lt;HASH160&lt;(key)&gt; EQUALVERIFY CHECKSIG
 |}
 
 
