@@ -178,7 +178,13 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |}
 
 <!--
-| check(key_1) + ... + check(key_n) = k *(P2WSH only)*     | `multi(k,key_1,...,key_n)`    | `<k> <key_1> ... <key_n> <n> CHECKMULTISIG`
+|-
+|check(key_1) + ... + check(key_n) = k *(P2WSH only)*
+|multi(k,key_1,...,key_n)
+|&lt;k&gt; &lt;key_1&gt; ... &lt;key<sub>n</sub>&gt; &lt;n&gt; CHECKMULTISIG
+
+<!--
+
 | check(key_1) + ... + check(key_n) = k *(Tapscript only)* | `multi_a(k,key_1,...,key_n)`  | `<key_1> CHECKSIG <key_2> CHECKSIGADD ... <key_n> CHECKSIGADD <k> NUMEQUAL`
 | X (identities)                                           | `a:X`                         | `TOALTSTACK [X] FROMALTSTACK`
 |                                                          | `s:X`                         | `SWAP [X]`
