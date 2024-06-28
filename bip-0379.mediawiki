@@ -185,6 +185,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |key<sub>1</sub> CHECKSIG key<sub>2</sub> CHECKSIGADD ... key<sub>n</sub> CHECKSIGADD &lt;k&gt; NUMEQUAL
 |-
 !colspan="6"|IDENTITIES
+|-
 |rowspan="4"|X (identities)
 |-
 |a:X
