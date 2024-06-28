@@ -109,7 +109,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |                                                          | `l:X` = `or_i(0,X)`           | `IF 0 ELSE [X] ENDIF`
 |                                                          | `u:X` = `or_i(X,0)`           | `IF [X] ELSE 0 ENDIF`
 
-<!--
+<!-- -->
 
 ===Type System===
 
@@ -425,4 +425,3 @@ Core version 25.0.
 The reference implementation for Miniscript in Tapscript was introduced in Bitcoin Core in PR
 [[27255][https://github.com/bitcoin/bitcoin/pull/27255]]. This PR was merged and released in Bitcoin Core
 version 26.0.
--->
