@@ -117,11 +117,11 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |pkh(key) = c:pk_h(key)
 |DUP HASH160 &lt;HASH160&lt;(key)&gt; EQUALVERIFY CHECKSIG
 |-
-|nSequence &lt;= n (and compatible)
+|nSequence &lt;= n <br>(and compatible)
 |older(n)
 |&lt;n&gt; CHECKSEQUENCEVERIFIY
 |-
-|nLockTime &lt;= n (and compatible)
+|nLockTime &lt;= n <br>(and compatible)
 |after(n)
 |&lt;n&gt; CHECKSEQUENCEVERIFIY
 |-
