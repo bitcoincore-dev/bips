@@ -257,10 +257,12 @@ together with an optional HASSIG ("has signature") marker that tracks whether th
 signature. To implement the function:
 * Invoke the function recursively for all subexpressions, obtaining all their satisfactions/dissatisfactions.
 * Iterate over all the valid satisfactions/dissatisfactions in the table above (including the non-canonical ones), taking into account:
-  * The dissatisfactions for `sha256`, `ripemd160`, `hash256`, and `hash160` are always malleable, so instead use DONTUSE there.
-  * The non-canonical options for `and_b`, `or_b`, and `thresh` are always overcomplete, so instead use DONTUSE there as well (with HASSIG flag if the original non-canonical solution had one).
-  * The satisfactions for `pk_k`, `pk_h`, and `multi` can be marked HASSIG.
-  * When constructing solutions by combining results for subexpressions, the result is DONTUSE if any of the constituent results is DONTUSE. Furthermore, the result gets the HASSIG tag if any of the constituents does.
+
+## The dissatisfactions for `sha256`, `ripemd160`, `hash256`, and `hash160` are always malleable, so instead use DONTUSE there.
+## The non-canonical options for `and_b`, `or_b`, and `thresh` are always overcomplete, so instead use DONTUSE there as well (with HASSIG flag if the original non-canonical solution had one).
+## The satisfactions for `pk_k`, `pk_h`, and `multi` can be marked HASSIG.
+## When constructing solutions by combining results for subexpressions, the result is DONTUSE if any of the constituent results is DONTUSE. Furthermore, the result gets the HASSIG tag if any of the constituents does.
+
 * If among all valid solutions (including DONTUSE ones) more than one does not have the HASSIG marker, return DONTUSE.
 * If instead exactly one does not have the HASSIG marker, return that solution.
 * If all valid solutions have the HASSIG marker, but all of them are DONTUSE, return DONTUSE-HASSIG. The HASSIG marker is important because while this represents a choice between multiple options that would cause malleability if used, they are not available to the attacker, and we may be able to avoid them entirely still.
