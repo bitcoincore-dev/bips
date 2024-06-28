@@ -176,7 +176,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |thresh(k,X<sub>1</sub>, ... , X<sub>n</sub>)
 |[X<sub>1</sub>] [X<sub>2</sub>] ADD ... [X<sub>n</sub>] ADD ... &lt;k&gt; EQUAL
 |-
-|check(key_1) + ... + check(key_n) = k *(P2WSH only)*
+|check(key_1) + ... + check(key_n) = k <br>*(P2WSH only)*
 |multi(k,key_1,...,key_n)
 |&lt;k&gt; &lt;key_1&gt; ... &lt;key<sub>n</sub>&gt; &lt;n&gt; CHECKMULTISIG
 |}
