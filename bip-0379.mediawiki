@@ -321,23 +321,23 @@ we define a type system. See the specifications above for a reference of each fr
 requirements and properties. Here we give more information about each type.
 
 Every expression has one of four basic types:
-* "**B**" Base expressions. These take their inputs from the top of the stack. When satisfied, they push a nonzero value of up to 4 bytes onto the stack. When dissatisfied, they push an exact 0 onto the stack (if dissatisfaction without aborting is possible at all). This type is used for most expressions, and required for the top level expression. An example is `older(n)` = `<n> CHECKSEQUENCEVERIFY`.
-* "**V**" Verify expressions. Like "B", these take their inputs from the top of the stack. Upon satisfaction however, they continue without pushing anything. They cannot be dissatisfied (will abort instead). A "V" can be obtained using the `v:` wrapper on a "B" expression, or by combining other "V" expressions using `and_v`, `or_i`, `or_c`, or `andor`. An example is `v:pk(key)` = `<key> CHECKSIGVERIFY`.
-* "**K**" Key expressions. They again take their inputs from the top of the stack, but instead of verifying a condition directly they always push a public key onto the stack, for which a signature is still required to satisfy the expression. A "K" can be converted into a "B" using the `c:` wrapper. An example is `pk_h(key)` = `DUP HASH160 <Hash160(key)> EQUALVERIFY`.
-* "**W**" Wrapped expressions. They take their inputs from one below the top of the stack, and push a nonzero (in case of satisfaction) or zero (in case of dissatisfaction) either on top of the stack, or one below. So for example a 3-input "W" would take the stack "A B C D E F" and turn it into "A B F 0" or "A B 0 F" in case of dissatisfaction, and "A B F n" or "A B n F" in case of satisfaction (with n a nonzero value). Every "W" is either `s:B` (SWAP B) or `a:B` (TOALTSTACK B FROMALTSTACK). An example is `s:pk(key)` = `SWAP <key> CHECKSIG`.
+* "'''B'''" Base expressions. These take their inputs from the top of the stack. When satisfied, they push a nonzero value of up to 4 bytes onto the stack. When dissatisfied, they push an exact 0 onto the stack (if dissatisfaction without aborting is possible at all). This type is used for most expressions, and required for the top level expression. An example is `older(n)` = `<n> CHECKSEQUENCEVERIFY`.
+* "'''V'''" Verify expressions. Like "B", these take their inputs from the top of the stack. Upon satisfaction however, they continue without pushing anything. They cannot be dissatisfied (will abort instead). A "V" can be obtained using the `v:` wrapper on a "B" expression, or by combining other "V" expressions using `and_v`, `or_i`, `or_c`, or `andor`. An example is `v:pk(key)` = `<key> CHECKSIGVERIFY`.
+* "'''K'''" Key expressions. They again take their inputs from the top of the stack, but instead of verifying a condition directly they always push a public key onto the stack, for which a signature is still required to satisfy the expression. A "K" can be converted into a "B" using the `c:` wrapper. An example is `pk_h(key)` = `DUP HASH160 <Hash160(key)> EQUALVERIFY`.
+* "'''W'''" Wrapped expressions. They take their inputs from one below the top of the stack, and push a nonzero (in case of satisfaction) or zero (in case of dissatisfaction) either on top of the stack, or one below. So for example a 3-input "W" would take the stack "A B C D E F" and turn it into "A B F 0" or "A B 0 F" in case of dissatisfaction, and "A B F n" or "A B n F" in case of satisfaction (with n a nonzero value). Every "W" is either `s:B` (SWAP B) or `a:B` (TOALTSTACK B FROMALTSTACK). An example is `s:pk(key)` = `SWAP <key> CHECKSIG`.
 
 Then there are 6 type modifiers, which guarantee additional properties:
-* "**z**" Zero-arg: this expression always consumes exactly 0 stack elements.
-* "**o**" One-arg: this expression always consumes exactly 1 stack element.
-* "**n**" Nonzero: this expression always consumes at least 1 stack element, no satisfaction for this expression requires the top input stack element to be zero.
-* "**d**" Dissatisfiable: a dissatisfaction for this expression can unconditionally be constructed. This implies the dissatisfaction cannot include any signature or hash preimage, and cannot rely on timelocks being satisfied.
-* "**u**" Unit: when satisfied, this expression will put an exact 1 on the stack (as opposed to any nonzero value).
-* "**k**" No timelock mixing. This expression does not contain a mix of heightlock and timelock of the same type. If the miniscript does not have the "k" property, the miniscript template will not match the user expectation of the corresponding spending policy.
+* "'''z'''" Zero-arg: this expression always consumes exactly 0 stack elements.
+* "'''o'''" One-arg: this expression always consumes exactly 1 stack element.
+* "'''n'''" Nonzero: this expression always consumes at least 1 stack element, no satisfaction for this expression requires the top input stack element to be zero.
+* "'''d'''" Dissatisfiable: a dissatisfaction for this expression can unconditionally be constructed. This implies the dissatisfaction cannot include any signature or hash preimage, and cannot rely on timelocks being satisfied.
+* "'''u'''" Unit: when satisfied, this expression will put an exact 1 on the stack (as opposed to any nonzero value).
+* "'''k'''" No timelock mixing. This expression does not contain a mix of heightlock and timelock of the same type. If the miniscript does not have the "k" property, the miniscript template will not match the user expectation of the corresponding spending policy.
 
 Finally to analyze malleability guarantees we introduce 3 new type modifiers:
-* "**s**" Signed: satisfying this expression always requires a signature (predicting whether all satisfactions will be HASSIG).
-* "**f**" Forced: dissatisfying this expression always requires a signature (predicting whether all dissatisfactions will be HASSIG).
-* "**e**" Expressive: this requires a unique unconditional dissatisfaction to exist, and forces all conditional dissatisfactions (if any) to require a signature.
+* "'''s'''" Signed: satisfying this expression always requires a signature (predicting whether all satisfactions will be HASSIG).
+* "'''f'''" Forced: dissatisfying this expression always requires a signature (predicting whether all dissatisfactions will be HASSIG).
+* "'''e'''" Expressive: this requires a unique unconditional dissatisfaction to exist, and forces all conditional dissatisfactions (if any) to require a signature.
 
 
 ===Malleability===
