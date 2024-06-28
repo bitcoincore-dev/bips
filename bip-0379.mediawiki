@@ -414,7 +414,7 @@ TBD
 
 ==Backwards Compatibility==
 
-Miniscript's syntax is compatible with BIP 380 Output Script Descriptors, and should be considered
+Miniscript's syntax is compatible with [[bip-0380.mediawiki|bip-0380]] Output Script Descriptors, and should be considered
 an extension to it that provides a new type of Script expression that is only valid in
 `wsh()` and `tr()` contexts. As these are wholly new expressions, they are not
 compatible with any existing implementation of descriptors. Additionally, the scripts produced are
