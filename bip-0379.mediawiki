@@ -30,7 +30,6 @@ Bitcoin Script is an unusual stack-based language with many edge cases, designed
 spending conditions consisting of various combinations of signatures, hash locks, and time locks.
 Yet, despite being limited in functionality, it is still highly nontrivial to:
 
-<!--
 * Given a combination of spending conditions, finding the most economical script to implement it.
 * Given two scripts, construct a script that implements a composition of their spending conditions (e.g. a multisig where one of the "keys" is another multisig).
 * Given a script, find out what spending conditions it permits.
@@ -38,6 +37,7 @@ Yet, despite being limited in functionality, it is still highly nontrivial to:
 * Given a script, be able to predict the cost of spending an output.
 * Given a script, know whether particular resource limitations like the ops limit might be hit when spending.
 
+<!--
 Miniscript functions as a representation for scripts that makes this sort of operations possible.
 It has a structure that allows composition. It is very easy to statically analyze for various
 properties (spending conditions, correctness, security properties, malleability, ...). It can be
