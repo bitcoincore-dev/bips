@@ -376,7 +376,7 @@ satisfaction:
 * Some of the non-canonical options (the `or_b`, `and_b`, and `thresh` ones) are overcomplete, and thus can clearly not appear in non-malleable satisfactions.
 * The fact that non-"d" expressions cannot be dissatisfied in valid witnesses rules out the usage of the non-canonical `and_v` dissatisfaction.
 * "d" expressions are defined to be unconditionally dissatisfiable, which implies that for those a non-HASSIG dissatisfaction must exist. Non-HASSIG solutions must be preferred over HASSIG ones (reason 2), and when multiple non-HASSIG ones exist, none can be used (reason 1). This lets us rule out the other non-canonical options in the table:
-  * `j:X` is always "d", its non-HASSIG dissatisfaction "0" always exists, and thus rules out any usage of "dsat(X)".
+# `j:X` is always "d", its non-HASSIG dissatisfaction "0" always exists, and thus rules out any usage of "dsat(X)".
   * If `andor(X,Y,Z)` is "d", a non-HASSIG dissatisfaction "dsat(Z) dsat(X)" must exist, and thus rules out any usage of "dsat(Y) sat(X)".
   * If `and_b(X,Y)` is "d", a non-HASSIG dissatisfaction "dsat(Y) dsat(X)" must exist, and thus rules out any usage of "dsat(Y) sat(X)" and "sat(Y) dsat(X)". Those are also overcomplete.
   * `thresh(k,...)` is always "d", a non-HASSIG dissatisfaction with just dissatisfactions must exist due to typing rules, and thus rules out usage of the other dissatisfactions. They are also overcomplete.
