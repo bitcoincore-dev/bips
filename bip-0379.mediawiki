@@ -179,10 +179,10 @@ mix absolute and relative timelocks (even if one is height based and the other i
 
 ====Malleability====
 
-Malleability is the ability for a third party (someone who does *not* hold a participating private
+Malleability is the ability for a third party (someone who does '''not''' hold a participating private
 key) to modify an existing satisfaction into another valid satisfaction. To analyze the
-malleability guarantees of a script we define three additional type properties: "**s**" (signed),
-"**f**" (forced) and "**e**" (expressive).
+malleability guarantees of a script we define three additional type properties: "'''s'''" (signed),
+"'''f'''" (forced) and "'''e'''" (expressive).
 
 The following table lists the malleability properties and requirement of each fragment.
 
