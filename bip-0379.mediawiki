@@ -144,12 +144,13 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |len(x) = 32 and HASH160(x) = h
 |hash160(h)
 |SIZE &lt;20&gt; EQUALVERIFIY HASH160 &lt;h&gt; EQUAL
+|-
+|(X and Y) or Z                                           
+|andor(X,Y,Z)                
+|[X] NOTIF [Z] ELSE [Y] ENDIF
 |}
 
-
 <!--
-
-| (X and Y) or Z                                           | `andor(X,Y,Z)`                | `[X] NOTIF [Z] ELSE [Y] ENDIF`
 | X and Y                                                  | `and_v(X,Y)`                  | `[X] [Y]`
 |                                                          | `and_b(X,Y)`                  | `[X] [Y] BOOLAND`
 |                                                          | `and_n(X,Y)` = `andor(X,Y,0)` | `[X] NOTIF 0 ELSE [Y] ENDIF`
