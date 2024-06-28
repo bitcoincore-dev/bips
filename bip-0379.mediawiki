@@ -96,22 +96,18 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |Bitcoin Script
 |-
 |COLSPAN=1
-|colspan="2"|COLSPAN=2
 |COLSPAN=1
 |COLSPAN=1
 |-
 |COLSPAN=1
-|colspan="2"|COLSPAN=2
 |COLSPAN=1
 |COLSPAN=1
 |-
 |COLSPAN=1
-|colspan="2"|COLSPAN=2
 |COLSPAN=1
 |COLSPAN=1
 |-
 |COLSPAN=1
-|colspan="2"|COLSPAN=2
 |COLSPAN=1
 |COLSPAN=1
 |}
