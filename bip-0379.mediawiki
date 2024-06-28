@@ -89,7 +89,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |}
 
 {| class="wikitable"
-!colspan="6"|COLSPAN=6
+!colspan="6"|MINSCRIPT
 |-
 |Semantics
 |Miniscript Fragment
