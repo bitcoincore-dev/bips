@@ -78,7 +78,7 @@ Miniscript is not a separate language, but rather a significant expansion of the
 !colspan="6"|COLSPAN=6
 |-
 |rowspan="2"|ROWSPAN=2
-|Semantics
+|Semantics				
 |Miniscript Fragment
 |Bitcoin Script
 |colspan="2"|COLSPAN=2
