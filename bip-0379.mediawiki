@@ -73,42 +73,52 @@ Miniscript. BIP 382's key expression restrictions apply to Miniscript in P2WSH c
 386's key expression restrictions apply to Miniscript in P2TR contexts. From a user's perspective,
 Miniscript is not a separate language, but rather a significant expansion of the descriptor language.
 
-| Semantics                                                | Miniscript Fragment           | Bitcoin Script
-|----------------------------------------------------------|-------------------------------|---------------
-| false                                                    | `0`                           | `0`
-| true                                                     | `1`                           | `1`
-| check(key)                                               | `pk_k(key)`                   | `<key>`
-|                                                          | `pk_h(key)`                   | `DUP HASH160 <HASH160(key)> EQUALVERIFY `
-|                                                          | `pk(key)` = `c:pk_k(key)`     | `<key> CHECKSIG`
-|                                                          | `pkh(key)` = `c:pk_h(key)`    | `DUP HASH160 <HASH160(key)> EQUALVERIFY CHECKSIG`
-| nSequence ≥ n (and compatible)                           | `older(n)`                    | `<n> CHECKSEQUENCEVERIFY`
-| nLockTime ≥ n (and compatible)                           | `after(n)`                    | `<n> CHECKLOCKTIMEVERIFY`
-| len(x) = 32 and SHA256(x) = h                            | `sha256(h)`                   | `SIZE <20> EQUALVERIFY SHA256 <h> EQUAL`
-| len(x) = 32 and HASH256(x) = h                           | `hash256(h)`                  | `SIZE <20> EQUALVERIFY HASH256 <h> EQUAL`
-| len(x) = 32 and RIPEMD160(x) = h                         | `ripemd160(h)`                | `SIZE <20> EQUALVERIFY RIPEMD160 <h> EQUAL`
-| len(x) = 32 and HASH160(x) = h                           | `hash160(h)`                  | `SIZE <20> EQUALVERIFY HASH160 <h> EQUAL`
-| (X and Y) or Z                                           | `andor(X,Y,Z)`                | `[X] NOTIF [Z] ELSE [Y] ENDIF`
-| X and Y                                                  | `and_v(X,Y)`                  | `[X] [Y]`
-|                                                          | `and_b(X,Y)`                  | `[X] [Y] BOOLAND`
-|                                                          | `and_n(X,Y)` = `andor(X,Y,0)` | `[X] NOTIF 0 ELSE [Y] ENDIF`
-| X or Z                                                   | `or_b(X,Z)`                   | `[X] [Z] BOOLOR`
-|                                                          | `or_c(X,Z)`                   | `[X] NOTIF [Z] ENDIF`
-|                                                          | `or_d(X,Z)`                   | `[X] IFDUP NOTIF [Z] ENDIF`
-|                                                          | `or_i(X,Z)`                   | `IF [X] ELSE [Z] ENDIF`
-| X_1 + ... + X_n = k                                      | `thresh(k,X_1,...,X_n)`       | `[X_1] [X_2] ADD ... [X_n] ADD ... <k> EQUAL`
-| check(key_1) + ... + check(key_n) = k *(P2WSH only)*     | `multi(k,key_1,...,key_n)`    | `<k> <key_1> ... <key_n> <n> CHECKMULTISIG`
-| check(key_1) + ... + check(key_n) = k *(Tapscript only)* | `multi_a(k,key_1,...,key_n)`  | `<key_1> CHECKSIG <key_2> CHECKSIGADD ... <key_n> CHECKSIGADD <k> NUMEQUAL`
-| X (identities)                                           | `a:X`                         | `TOALTSTACK [X] FROMALTSTACK`
-|                                                          | `s:X`                         | `SWAP [X]`
-|                                                          | `c:X`                         | `[X] CHECKSIG`
-|                                                          | `t:X` = `and_v(X,1)`          | `[X] 1`
-|                                                          | `d:X`                         | `DUP IF [X] ENDIF`
-|                                                          | `v:X`                         | `[X] VERIFY (or VERIFY version of last opcode in [X])`
-|                                                          | `j:X`                         | `SIZE 0NOTEQUAL IF [X] ENDIF`
-|                                                          | `n:X`                         | `[X] 0NOTEQUAL`
-|                                                          | `l:X` = `or_i(0,X)`           | `IF 0 ELSE [X] ENDIF`
-|                                                          | `u:X` = `or_i(X,0)`           | `IF [X] ELSE 0 ENDIF`
 
+{|
+|  Orange || Apple || more
+|-
+|   Bread || Pie || more
+|-
+|   Butter || Ice cream || and more
+|}
+
+{|
+| Semantics                                                || Miniscript Fragment           || Bitcoin Script
+|----------------------------------------------------------||-------------------------------||---------------
+| false                                                    || `0`                           || `0`
+| true                                                     || `1`                           || `1`
+| check(key)                                               || `pk_k(key)`                   || `<key>`
+|                                                          || `pk_h(key)`                   || `DUP HASH160 <HASH160(key)> EQUALVERIFY `
+|                                                          || `pk(key)` = `c:pk_k(key)`     || `<key> CHECKSIG`
+|                                                          || `pkh(key)` = `c:pk_h(key)`    || `DUP HASH160 <HASH160(key)> EQUALVERIFY CHECKSIG`
+| nSequence ≥ n (and compatible)                           || `older(n)`                    || `<n> CHECKSEQUENCEVERIFY`
+| nLockTime ≥ n (and compatible)                           || `after(n)`                    || `<n> CHECKLOCKTIMEVERIFY`
+| len(x) = 32 and SHA256(x) = h                            || `sha256(h)`                   || `SIZE <20> EQUALVERIFY SHA256 <h> EQUAL`
+| len(x) = 32 and HASH256(x) = h                           || `hash256(h)`                  || `SIZE <20> EQUALVERIFY HASH256 <h> EQUAL`
+| len(x) = 32 and RIPEMD160(x) = h                         || `ripemd160(h)`                || `SIZE <20> EQUALVERIFY RIPEMD160 <h> EQUAL`
+| len(x) = 32 and HASH160(x) = h                           || `hash160(h)`                  || `SIZE <20> EQUALVERIFY HASH160 <h> EQUAL`
+| (X and Y) or Z                                           || `andor(X,Y,Z)`                || `[X] NOTIF [Z] ELSE [Y] ENDIF`
+| X and Y                                                  || `and_v(X,Y)`                  || `[X] [Y]`
+|                                                          || `and_b(X,Y)`                  || `[X] [Y] BOOLAND`
+|                                                          || `and_n(X,Y)` = `andor(X,Y,0)` || `[X] NOTIF 0 ELSE [Y] ENDIF`
+| X or Z                                                   || `or_b(X,Z)`                   || `[X] [Z] BOOLOR`
+|                                                          || `or_c(X,Z)`                   || `[X] NOTIF [Z] ENDIF`
+|                                                          || `or_d(X,Z)`                   || `[X] IFDUP NOTIF [Z] ENDIF`
+|                                                          || `or_i(X,Z)`                   || `IF [X] ELSE [Z] ENDIF`
+| X_1 + ... + X_n = k                                      || `thresh(k,X_1,...,X_n)`       || `[X_1] [X_2] ADD ... [X_n] ADD ... <k> EQUAL`
+| check(key_1) + ... + check(key_n) = k *(P2WSH only)*     || `multi(k,key_1,...,key_n)`    || `<k> <key_1> ... <key_n> <n> CHECKMULTISIG`
+| check(key_1) + ... + check(key_n) = k *(Tapscript only)* || `multi_a(k,key_1,...,key_n)`  || `<key_1> CHECKSIG <key_2> CHECKSIGADD ... <key_n> CHECKSIGADD <k> NUMEQUAL`
+| X (identities)                                           || `a:X`                         || `TOALTSTACK [X] FROMALTSTACK`
+|                                                          || `s:X`                         || `SWAP [X]`
+|                                                          || `c:X`                         || `[X] CHECKSIG`
+|                                                          || `t:X` = `and_v(X,1)`          || `[X] 1`
+|                                                          || `d:X`                         || `DUP IF [X] ENDIF`
+|                                                          || `v:X`                         || `[X] VERIFY (or VERIFY version of last opcode in [X])`
+|                                                          || `j:X`                         || `SIZE 0NOTEQUAL IF [X] ENDIF`
+|                                                          || `n:X`                         || `[X] 0NOTEQUAL`
+|                                                          || `l:X` = `or_i(0,X)`           || `IF 0 ELSE [X] ENDIF`
+|                                                          || `u:X` = `or_i(X,0)`           || `IF [X] ELSE 0 ENDIF`
+|}
 ===Type System===
 
 Not every Miniscript expression can be composed with every other. Some return their result by
