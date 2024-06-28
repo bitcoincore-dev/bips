@@ -46,7 +46,7 @@ it.
 
 ==Specification==
 
-These specifications apply to P2WSH \([[BIP 141][bip-0141.mediawiki]]\) and Tapscript \([[BIP 342][bip-0342.mediawiki]]\) scripts, with only minor
+These specifications apply to P2WSH [[BIP 141][bip-0141.mediawiki]] and Tapscript [[BIP 342][bip-0342.mediawiki]] scripts, with only minor
 variations between the two. Differences are noted inline. Unless explicitly stated otherwise,
 specifications apply to both. P2SH and bare scripts are excluded from this specification.
 
