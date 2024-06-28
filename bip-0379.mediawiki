@@ -136,6 +136,14 @@ Miniscript is not a separate language, but rather a significant expansion of the
 |len(x) = 32 and HASH256(x) = h
 |hash256(h)
 |SIZE &lt;20&gt; EQUALVERIFIY HASH256 &lt;h&gt; EQUAL
+|-
+|len(x) = 32 and RIPEMD160(x) = h
+|ripemd160(h)
+|SIZE &lt;20&gt; EQUALVERIFIY RIPEMD160 &lt;h&gt; EQUAL
+|-
+|len(x) = 32 and HASH160(x) = h
+|hash160(h)
+|SIZE &lt;20&gt; EQUALVERIFIY HASH160 &lt;h&gt; EQUAL
 |}
 
 
